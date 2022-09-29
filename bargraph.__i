@@ -1,0 +1,1 @@
+"bargraph.c" OPTIMIZE (8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\bargraph.lst) TABS (2) OBJECT(.\Objects\bargraph.obj)

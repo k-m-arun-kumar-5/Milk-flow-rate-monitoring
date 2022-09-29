@@ -1,0 +1,393 @@
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    09/24/2022  11:29:18  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\STARTUP.obj, .\Objects\main.obj, .\Objects\bargraph.obj, .\Objects\pulse_count.obj
+>> , .\Objects\simple_EOS.obj TO .\Objects\appl_eOS PRINT (.\Listings\appl_eOS.m51) RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\STARTUP.obj (?C_STARTUP)
+  .\Objects\main.obj (MAIN)
+  .\Objects\bargraph.obj (BARGRAPH)
+  .\Objects\pulse_count.obj (PULSE_COUNT)
+  .\Objects\simple_EOS.obj (SIMPLE_EOS)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C_INIT)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?LMUL)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?ULDIV)
+
+
+LINK MAP OF MODULE:  .\Objects\appl_eOS (?C_STARTUP)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0009H     UNIT         ?DT?BARGRAPH
+            DATA    0011H     0004H     UNIT         _DATA_GROUP_
+            DATA    0015H     0003H     UNIT         ?DT?PULSE_COUNT
+                    0018H     0008H                  *** GAP ***
+            BIT     0020H.0   0000H.6   UNIT         ?BI?PULSE_COUNT
+                    0020H.6   0000H.2                *** GAP ***
+            IDATA   0021H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     0010H     UNIT         ?PR?MAIN?MAIN
+            CODE    0013H     000FH     UNIT         ?PR?PULSE_COUNT_INIT?PULSE_COUNT
+            CODE    0022H     0008H     UNIT         ?C_INITSEG
+                    002AH     0001H                  *** GAP ***
+            CODE    002BH     0003H     ABSOLUTE     
+            CODE    002EH     011DH     UNIT         ?C?LIB_CODE
+            CODE    014BH     00D3H     UNIT         ?PR?BARGRAPH_UPDATE?BARGRAPH
+            CODE    021EH     008CH     UNIT         ?C_C51STARTUP
+            CODE    02AAH     0055H     UNIT         ?PR?PULSE_COUNT_UPDATE?PULSE_COUNT
+            CODE    02FFH     004AH     UNIT         ?PR?BARGRAPH_INIT?BARGRAPH
+            CODE    0349H     003FH     UNIT         ?PR?_SEOS_INIT_TIMER2?SIMPLE_EOS
+            CODE    0388H     003DH     UNIT         ?PR?SEOS_ISR?SIMPLE_EOS
+            CODE    03C5H     000CH     UNIT         ?PR?_PULSE_COUNT_CHECK_BELOW_THRESHOLD?PULSE_COUNT
+            CODE    03D1H     0004H     UNIT         ?PR?SEOS_GO_TO_SLEEP?SIMPLE_EOS
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\appl_eOS (?C_STARTUP)
+
+
+SEGMENT                                            DATA_GROUP 
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  09/24/2022  11:29:18  PAGE 2
+
+
+  +--> CALLED SEGMENT                            START    LENGTH
+----------------------------------------------------------------
+?C_C51STARTUP                                    -----    -----
+  +--> ?PR?MAIN?MAIN
+  +--> ?C_INITSEG
+
+?PR?MAIN?MAIN                                    -----    -----
+  +--> ?PR?PULSE_COUNT_INIT?PULSE_COUNT
+  +--> ?PR?BARGRAPH_INIT?BARGRAPH
+  +--> ?PR?_SEOS_INIT_TIMER2?SIMPLE_EOS
+  +--> ?PR?SEOS_GO_TO_SLEEP?SIMPLE_EOS
+
+?PR?_SEOS_INIT_TIMER2?SIMPLE_EOS                 0011H    0004H
+
+*** NEW ROOT ***************************************************
+
+?PR?SEOS_ISR?SIMPLE_EOS                          -----    -----
+  +--> ?PR?PULSE_COUNT_UPDATE?PULSE_COUNT
+
+?PR?PULSE_COUNT_UPDATE?PULSE_COUNT               -----    -----
+  +--> ?PR?_PULSE_COUNT_CHECK_BELOW_THRESHOL...
+  +--> ?PR?BARGRAPH_UPDATE?BARGRAPH
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\appl_eOS (?C_STARTUP)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        ?C_STARTUP
+  C:021EH         SEGMENT       ?C_C51STARTUP
+  I:0021H         SEGMENT       ?STACK
+  C:0000H         PUBLIC        ?C_STARTUP
+  D:00E0H         SYMBOL        ACC
+  D:00F0H         SYMBOL        B
+  D:0083H         SYMBOL        DPH
+  D:0082H         SYMBOL        DPL
+  N:0000H         SYMBOL        IBPSTACK
+  N:0100H         SYMBOL        IBPSTACKTOP
+  N:0080H         SYMBOL        IDATALEN
+  C:0221H         SYMBOL        IDATALOOP
+  N:0000H         SYMBOL        PBPSTACK
+  N:0100H         SYMBOL        PBPSTACKTOP
+  N:0000H         SYMBOL        PDATALEN
+  N:0000H         SYMBOL        PDATASTART
+  N:0000H         SYMBOL        PPAGE
+  N:0000H         SYMBOL        PPAGEENABLE
+  D:00A0H         SYMBOL        PPAGE_SFR
+  D:0081H         SYMBOL        SP
+  C:021EH         SYMBOL        STARTUP1
+  N:0000H         SYMBOL        XBPSTACK
+  N:0000H         SYMBOL        XBPSTACKTOP
+  N:0000H         SYMBOL        XDATALEN
+  N:0000H         SYMBOL        XDATASTART
+  C:0000H         LINE#         126
+  C:021EH         LINE#         133
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  09/24/2022  11:29:18  PAGE 3
+
+
+  C:0220H         LINE#         134
+  C:0221H         LINE#         135
+  C:0222H         LINE#         136
+  C:0224H         LINE#         185
+  C:0227H         LINE#         196
+  -------         ENDMOD        ?C_STARTUP
+
+  -------         MODULE        MAIN
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0090H         PUBLIC        P1
+  D:00A0H         PUBLIC        P2
+  D:00B0H         PUBLIC        P3
+  D:00A8H         PUBLIC        IE
+  D:00B8H         PUBLIC        IP
+  C:0003H         PUBLIC        main
+  D:0098H         PUBLIC        SCON
+  D:0088H         PUBLIC        TCON
+  D:00C8H         PUBLIC        T2CON
+  D:00D0H         PUBLIC        PSW
+  -------         PROC          MAIN
+  C:0003H         LINE#         54
+  C:0003H         LINE#         55
+  C:0003H         LINE#         58
+  C:0006H         LINE#         60
+  C:0009H         LINE#         64
+  C:000EH         LINE#         66
+  C:000EH         LINE#         67
+  C:000EH         LINE#         71
+  C:0011H         LINE#         75
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        MAIN
+
+  -------         MODULE        BARGRAPH
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0090H         PUBLIC        P1
+  D:00A0H         PUBLIC        P2
+  D:00B0H         PUBLIC        P3
+  D:00A8H         PUBLIC        IE
+  C:014BH         PUBLIC        BARGRAPH_Update
+  D:00B8H         PUBLIC        IP
+  D:0008H         PUBLIC        Data_G
+  D:0098H         PUBLIC        SCON
+  D:0088H         PUBLIC        TCON
+  C:02FFH         PUBLIC        BARGRAPH_Init
+  B:00A0H.0       PUBLIC        Pin0
+  B:00A0H.1       PUBLIC        Pin1
+  B:00A0H.2       PUBLIC        Pin2
+  B:00A0H.3       PUBLIC        Pin3
+  B:00A0H.4       PUBLIC        Pin4
+  B:00A0H.5       PUBLIC        Pin5
+  B:00A0H.6       PUBLIC        Pin6
+  B:00A0H.7       PUBLIC        Pin7
+  D:00C8H         PUBLIC        T2CON
+  D:0009H         SYMBOL        Threshold_1_G
+  D:000AH         SYMBOL        Threshold_2_G
+  D:000BH         SYMBOL        Threshold_3_G
+  D:000CH         SYMBOL        Threshold_4_G
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  09/24/2022  11:29:18  PAGE 4
+
+
+  D:000DH         SYMBOL        Threshold_5_G
+  D:000EH         SYMBOL        Threshold_6_G
+  D:000FH         SYMBOL        Threshold_7_G
+  D:0010H         SYMBOL        Threshold_8_G
+  D:00D0H         PUBLIC        PSW
+  -------         PROC          BARGRAPH_INIT
+  C:02FFH         LINE#         62
+  C:02FFH         LINE#         63
+  C:02FFH         LINE#         64
+  C:0301H         LINE#         65
+  C:0303H         LINE#         66
+  C:0305H         LINE#         67
+  C:0307H         LINE#         68
+  C:0309H         LINE#         69
+  C:030BH         LINE#         70
+  C:030DH         LINE#         71
+  C:030FH         LINE#         79
+  C:0312H         LINE#         80
+  C:0318H         LINE#         81
+  C:0320H         LINE#         82
+  C:0328H         LINE#         83
+  C:0330H         LINE#         84
+  C:0338H         LINE#         85
+  C:0340H         LINE#         86
+  C:0348H         LINE#         87
+  -------         ENDPROC       BARGRAPH_INIT
+  -------         PROC          BARGRAPH_UPDATE
+  -------         DO            
+  D:0007H         SYMBOL        Data
+  -------         ENDDO         
+  C:014BH         LINE#         99
+  C:014BH         LINE#         100
+  C:014BH         LINE#         102
+  C:014DH         LINE#         105
+  C:0167H         LINE#         107
+  C:0181H         LINE#         110
+  C:019BH         LINE#         111
+  C:01B5H         LINE#         112
+  C:01CFH         LINE#         113
+  C:01E9H         LINE#         114
+  C:0203H         LINE#         115
+  C:021DH         LINE#         116
+  -------         ENDPROC       BARGRAPH_UPDATE
+  -------         ENDMOD        BARGRAPH
+
+  -------         MODULE        PULSE_COUNT
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0090H         PUBLIC        P1
+  D:00A0H         PUBLIC        P2
+  D:00B0H         PUBLIC        P3
+  D:00A8H         PUBLIC        IE
+  D:0015H         SYMBOL        Calls_G
+  B:00B0H.7       PUBLIC        Alarm_pin
+  D:00B8H         PUBLIC        IP
+  C:03C5H         PUBLIC        _PULSE_COUNT_Check_Below_Threshold
+  D:0017H         SYMBOL        Total_G
+  D:0098H         PUBLIC        SCON
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  09/24/2022  11:29:18  PAGE 5
+
+
+  D:0088H         PUBLIC        TCON
+  C:02AAH         PUBLIC        PULSE_COUNT_Update
+  B:00C8H.7       PUBLIC        TF2
+  B:0020H.0       SYMBOL        Test0
+  B:0020H.1       SYMBOL        Test1
+  B:0020H.2       SYMBOL        Test2
+  B:0020H.3       SYMBOL        Test3
+  B:0020H.4       SYMBOL        Test4
+  B:0020H.5       PUBLIC        Falling_edge_G
+  D:00C8H         PUBLIC        T2CON
+  C:0013H         PUBLIC        PULSE_COUNT_Init
+  B:00B0H.0       PUBLIC        Sw_pin
+  D:00D0H         PUBLIC        PSW
+  -------         PROC          PULSE_COUNT_INIT
+  C:0013H         LINE#         83
+  C:0013H         LINE#         84
+  C:0013H         LINE#         86
+  C:0015H         LINE#         87
+  C:0017H         LINE#         92
+  C:0019H         LINE#         93
+  C:001BH         LINE#         94
+  C:001DH         LINE#         95
+  C:001FH         LINE#         96
+  C:0021H         LINE#         97
+  -------         ENDPROC       PULSE_COUNT_INIT
+  -------         PROC          _PULSE_COUNT_CHECK_BELOW_THRESHOLD
+  D:0007H         SYMBOL        THRESHOLD
+  C:03C5H         LINE#         115
+  C:03C5H         LINE#         116
+  C:03C5H         LINE#         117
+  C:03CBH         LINE#         118
+  C:03CBH         LINE#         119
+  C:03CDH         LINE#         120
+  C:03CEH         LINE#         122
+  C:03CEH         LINE#         123
+  C:03D0H         LINE#         124
+  C:03D0H         LINE#         125
+  -------         ENDPROC       _PULSE_COUNT_CHECK_BELOW_THRESHOLD
+  -------         PROC          PULSE_COUNT_UPDATE
+  C:02AAH         LINE#         144
+  C:02AAH         LINE#         145
+  C:02AAH         LINE#         147
+  C:02ACH         LINE#         151
+  C:02B0H         LINE#         152
+  C:02B4H         LINE#         153
+  C:02B8H         LINE#         154
+  C:02BCH         LINE#         157
+  C:02C0H         LINE#         165
+  C:02CCH         LINE#         169
+  C:02CCH         LINE#         171
+  C:02CEH         LINE#         172
+  C:02D0H         LINE#         174
+  C:02D0H         LINE#         176
+  C:02D2H         LINE#         177
+  C:02D2H         LINE#         189
+  C:02E3H         LINE#         190
+  C:02E3H         LINE#         194
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  09/24/2022  11:29:18  PAGE 6
+
+
+  C:02EBH         LINE#         195
+  C:02ECH         LINE#         197
+  C:02ECH         LINE#         200
+  C:02EFH         LINE#         203
+  C:02F2H         LINE#         204
+  C:02F6H         LINE#         206
+  C:02FBH         LINE#         208
+  C:02FEH         LINE#         209
+  C:02FEH         LINE#         210
+  -------         ENDPROC       PULSE_COUNT_UPDATE
+  -------         ENDMOD        PULSE_COUNT
+
+  -------         MODULE        SIMPLE_EOS
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0080H         PUBLIC        P0
+  D:0090H         PUBLIC        P1
+  D:00A0H         PUBLIC        P2
+  D:00B0H         PUBLIC        P3
+  B:00A8H.7       PUBLIC        EA
+  D:00A8H         PUBLIC        IE
+  D:00B8H         PUBLIC        IP
+  D:00CBH         PUBLIC        RCAP2H
+  D:00CAH         PUBLIC        RCAP2L
+  C:0388H         PUBLIC        sEOS_ISR
+  D:0087H         PUBLIC        PCON
+  D:0098H         PUBLIC        SCON
+  D:0088H         PUBLIC        TCON
+  B:00A8H.5       PUBLIC        ET2
+  B:00C8H.7       PUBLIC        TF2
+  D:00CDH         PUBLIC        TH2
+  D:00CCH         PUBLIC        TL2
+  B:00C8H.2       PUBLIC        TR2
+  D:00C8H         PUBLIC        T2CON
+  C:0349H         PUBLIC        _sEOS_Init_Timer2
+  C:03D1H         PUBLIC        sEOS_Go_To_Sleep
+  D:00D0H         PUBLIC        PSW
+  -------         PROC          SEOS_ISR
+  C:0388H         LINE#         43
+  C:03A5H         LINE#         47
+  C:03A7H         LINE#         52
+  C:03AAH         LINE#         55
+  -------         ENDPROC       SEOS_ISR
+  -------         PROC          _SEOS_INIT_TIMER2
+  D:0007H         SYMBOL        TICK_MS
+  -------         DO            
+  D:0011H         SYMBOL        Inc
+  D:0004H         SYMBOL        Reload_16
+  D:0007H         SYMBOL        Reload_08H
+  D:0006H         SYMBOL        Reload_08L
+  -------         ENDDO         
+  C:0349H         LINE#         73
+  C:0349H         LINE#         74
+  C:0349H         LINE#         81
+  C:034CH         LINE#         84
+  C:036BH         LINE#         87
+  C:0373H         LINE#         90
+  C:0373H         LINE#         91
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  09/24/2022  11:29:18  PAGE 7
+
+
+  C:0375H         LINE#         94
+  C:0377H         LINE#         95
+  C:0379H         LINE#         97
+  C:037BH         LINE#         98
+  C:037DH         LINE#         99
+  C:037FH         LINE#         100
+  C:0381H         LINE#         104
+  C:0383H         LINE#         107
+  C:0385H         LINE#         109
+  C:0387H         LINE#         110
+  -------         ENDPROC       _SEOS_INIT_TIMER2
+  -------         PROC          SEOS_GO_TO_SLEEP
+  C:03D1H         LINE#         126
+  C:03D1H         LINE#         127
+  C:03D1H         LINE#         128
+  C:03D4H         LINE#         129
+  -------         ENDPROC       SEOS_GO_TO_SLEEP
+  -------         ENDMOD        SIMPLE_EOS
+
+  -------         MODULE        ?C?LMUL
+  C:002EH         PUBLIC        ?C?LMUL
+  -------         ENDMOD        ?C?LMUL
+
+  -------         MODULE        ?C?ULDIV
+  C:00B9H         PUBLIC        ?C?ULDIV
+  -------         ENDMOD        ?C?ULDIV
+
+Program Size: data=25.6 xdata=0 code=980
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

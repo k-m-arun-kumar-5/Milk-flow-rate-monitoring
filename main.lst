@@ -1,0 +1,113 @@
+C51 COMPILER V9.60.0.0   MAIN                                                              09/24/2022 11:29:18 PAGE 1   
+
+
+C51 COMPILER V9.60.0.0, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN .\Objects\main.obj
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE main.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\main
+                    -.lst) TABS(2) OBJECT(.\Objects\main.obj)
+
+line level    source
+
+   1          /* ********************************************************************
+   2          FILE                   : main.c
+   3          
+   4          PROGRAM DESCRIPTION    : program for the 8051/8052 with Milk flow rate monitoring (Application Task).
+   5                                 the rotating shaft gives rise to a pulse train. Determine flow rate from pulse trai
+             -n .
+   6                                 pulse train is given as a input to counter. As an output, bargraph is displayed, 
+   7                                 giving the operator on every period of ( MAX_UPDATECALL * SYSTEM_TICK_INTERVAL) time, a 
+   8                                 visual representation of the flow rate on that period. 
+   9                                 On every period of ( MAX_UPDATECALL * SYSTEM_TICK_INTERVAL) time, an audible alarm, 
+  10                                 which will sound when the flow rate on that period falls below an acceptable level.
+  11                                 For simulation purpose, pulse train is feed to switch, not to a counter. Flow rate is directly
+  12                                 proportional to toggling speed of operation of switch between 0 and 1.                      
+  13             
+  14          AUTHOR                : K.M. Arun Kumar alias Arunkumar Murugeswaran
+  15             
+  16          KNOWN BUGS            : 
+  17          
+  18          NOTE                  : implements sEOS, a simple time triggered ,nonpremptive and single application task
+             - executing embedded OS.
+  19                                 Switch is connected to P3.0 pin. alarm is connected to P3.7 pin. On every period of
+             - 
+  20                                 ( MAX_UPDATECALL * SYSTEM_TICK_INTERVAL) time, bargraph of flow rate on that period is display
+             -ed is P2 port,
+  21                                 with P2^0 been least discrete value
+  22                                 
+  23          CHANGE LOGS           : 
+  24          
+  25          *****************************************************************************/
+  26          #include "main.h"
+  27          #include "port.h"
+  28          #include "simple_EOS.h"
+  29          #include "bargraph.h"
+  30          #include "pulse_count.h"
+  31          
+  32          /* system ticks interval in m sec. for Every TICK_INTERVAL, application Task followed by e0S(system Task)
+  33             is executed. NOTE: make sure that SYSTEM_TICK_INTERVAL is large enough that uC executing maximum time 
+  34             required to start executing and completes  Application task and system task(sEOS_Go_To_Sleep)  */
+  35          #define SYSTEM_TICK_INTERVAL  (30)
+  36          /*------------------------------------------------------------*-
+  37          FUNCTION NAME  : main
+  38          
+  39          DESCRIPTION    :1: Configure ports and initialize bargraph display variables.
+  40                          2:  configure Timer T2 for automatic reload with preload and recapture values,
+  41                           corresponding to SYSTEM_TICK_INTERVAL msec and run the T2.               
+  42                          3: put the CPU of 8051/8052 in idle mode and Every  SYSTEM_TICK_INTERVAL when T2 overflow interrup
+             -t occurs, 
+  43                          4: check for falling edge of pulse train, and updates total pulse count over a period of t
+             -ime.
+  44                          5: Check  total pulse count over a period of time is below threshold value and update the 
+             -bargraph.              
+  45                          6: go to step 3, and repeat
+  46                          
+  47          INPUT          : none
+C51 COMPILER V9.60.0.0   MAIN                                                              09/24/2022 11:29:18 PAGE 2   
+
+  48          
+  49          OUTPUT         : 
+  50          
+  51          NOTE           : 
+  52          -*------------------------------------------------------------*/
+  53          
+  54          void main(void)
+  55             {
+  56   1           /* ========= begin : USER CODE INITIALIZE ========== */
+  57   1           /* initialize test bits and configure switch as input */
+  58   1         PULSE_COUNT_Init();
+  59   1        /* Prepare for the bargraph display. */  
+  60   1         BARGRAPH_Init();
+  61   1        /* ========= end : USER CODE INITIALIZE ========== */  
+  62   1      
+  63   1         /* Set up simple EOS. configure Timer 2 and start running Timer 2 */ 
+  64   1         sEOS_Init_Timer2(SYSTEM_TICK_INTERVAL);   
+  65   1         
+  66   1         while(1) // Super Loop
+  67   1            {
+  68   2            /* uC enters idle mode to save power consumed by CPU. But timers, UART and other
+  69   2              peripherals continue to work after idle mode */
+  70   2            /* ============ PERIODIC SYSTEM TASK EXECUTION ============= */ 
+  71   2            sEOS_Go_To_Sleep();  
+  72   2            /* here uC does not execute. When interrupt occurs, uC executes its corresponding ISR.
+  73   2               in our case, only Timer 2 overflow interrupt will occur, which executes its ISR, sEOS_ISR()  */
+  74   2              /* ISR of Timer 2 executes application task */  
+  75   2            }
+  76   1         }
+  77          
+  78          /*------------------------------------------------------------------*-
+  79            ---- END OF FILE -------------------------------------------------
+  80          -*------------------------------------------------------------------*/
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     16    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
