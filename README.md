@@ -29,8 +29,8 @@ Toolchains that I used for AT89C51 Application design and development are as fol
 3: Code editor                                                         - Notepad++.
 4: Documentation                                                       - Microsoft Office 2007 (alternative LibreOffice) and Text Editor.
 
-Some reference that I refered for ATMEL AT89C51 Application design and development, are as follows :
-====================================================================================================
+Some reference that I refered for AT89C51 Application design and development, are as follows :
+==============================================================================================
 1: Schaum's Outline of Programming with C, 2nd Edition - Book authored by Byron Gottfried.
 2: Understanding and Using C Pointers: Core Techniques for Memory Management - Book authored by Richard M. Reese. 
 3: Embedded C - Book authored by Michael J. Pont.
