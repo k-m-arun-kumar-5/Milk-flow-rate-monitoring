@@ -12,9 +12,9 @@ In all my respective repositories, I just shared my works that I worked as the l
 
 Autography :
 ============
-I, K.M. Arun Kumar alias Arunkumar Murugeswaran, in the year 2003, graduated (B.E. in Electronics and Instrumentation Engineering (EIE) at Government College of Technology (GCT), Coimbatore, India), was a C developer, with 2 years of work experience (2003-2005) at a company, based in Chennai, India, as a network programmer (using C programming language), in a role of Software engineer in Design & Development Team, in domain of Remote Access Server (RAS) in module of Point to Point Protocol (PPP), Telnet and SS7. I resigned from that company, due to work stress that I was unable to bear, which affected my health and then treatment given by a doctor, which was not suitable for my health, worsen my health. After a rehabitation process in my health, thanks to my mother, sister and family, healthcare, myself, god and all those who directly or indirectly help and/or support me and my family, which helped me to recover my health. I again practiced and refresh C programming.
+I, K.M. Arun Kumar alias Arunkumar Murugeswaran, in the year 2003, graduated (B.E. in Electronics and Instrumentation Engineering (EIE) at Government College of Technology (GCT), Coimbatore, India), was a C developer, with 2 years of work experience (2003-2005) at a company, based in Chennai, India, as a network programmer (using C programming language), in a role of Software engineer in Design & Development Team, in domain of Remote Access Server (RAS) in module of Point to Point Protocol (PPP), Telnet and Common Channel Signaling (CCS). I resigned from that company, due to work stress that I was unable to bear, which affected my health and then treatment given by a doctor, which was not suitable for my health, worsen my health. After a rehabitation process in my health, thanks to my mother, sister and family, healthcare, myself, god and all those who directly or indirectly help and/or support me and my family, which helped me to recover my health. I again practiced and refresh C programming.
  
-I have a career break from 2005 - 2023, in 2018-2019, I also learned some Embedded C Programmming using ATMEL AT89C51, PIC16F887, PIC18F4680 and LPC2138 to practice Embedded C programmming and searched for the job. But in vain, mainly due to my career break and my age. 
+I have a career break from 2005 - 2023, in 2018-2019, I also learned some Embedded C Programmming using ATMEL AT89C51, PIC16F887 and LPC2138 to practice Embedded C programmming and searched for the job. But in vain, mainly due to my career break and my age factor. 
 
 I just shared my works that I used as the learning path and practiced, with designed, developed, implemented, simulated and tested, including some projects, assignments, documentations and all other related files. 
   
@@ -24,10 +24,12 @@ I thank to my family, Friends, Teachers, People behind the toolchains and refere
 
 Toolchains that I used for AT89C51 Application design and development are as follows :
 ======================================================================================
-1: IDE and Simulator for Application development of  AT89C51           - Keil uvision 4 for C51 Development Tools
-2: Desktop Computer Architecture and OS for development of  AT89C51    - Intel X64 & Windows 8.1 (64 bit).
-3: Code editor                                                         - Notepad++.
-4: Documentation                                                       - Microsoft Office 2007 (alternative LibreOffice) and Text Editor.
+1: IDE and Simulator for Application development of  AT89C51           - Keil uvision 4 for C51 Development Tools.
+2: CAD                                                                 - Proteus 8.3. 
+3: Desktop Computer Architecture and OS for development of  AT89C51    - Intel X64 & Windows 8.1 (64 bit).
+4: Code editor                                                         - Notepad++.
+5: Documentation                                                       - Microsoft Office 2007 (alternative LibreOffice) and Text Editor.
+6: File Archiver                                                       - 7-Zip.           
 
 Some reference that I refered for AT89C51 Application design and development, are as follows :
 ==============================================================================================
