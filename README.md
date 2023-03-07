@@ -1,6 +1,6 @@
 Description
 ===========
-   The rotating shaft gives rise to a pulse train. Determine flow rate from pulse train . Pulse train is given as a input to counter. As an output, bargraph is displayed, giving the operator on every period for specified time, a visual representation of the flow rate on that period. On every period of specified time, an audible alarm, which will sound when the flow rate on that period falls below an acceptable level. For simulation purpose, pulse train is feed to switch, not to a counter. Flow rate is directly proportional to toggling speed of operation of switch between 0 and 1. 
+   The rotating shaft gives rise to a pulse train. Determine flow rate from pulse train . Pulse train is given as a input to counter. As an output, bargraph is displayed, giving the operator on every period for specified time, a visual representation of the flow rate on that period. On every period of specified time, an audible alarm, which will sound when the flow rate on that period falls below an acceptable level. For simulation purpose, pulse train is feed to switch, not to a counter. Flow rate is directly proportional to toggling speed of operation of switch between 0 and 1. Simple Embedded Operating system is also implemented.
 
 CAUTION:
 ========
@@ -16,7 +16,7 @@ I thank to my family, Friends, Teachers, People behind the toolchains and refere
 
 Toolchains that I used for AT89C51 Application design and development are as follows :
 ======================================================================================
-1: Compiler & IDE      r Application development of  AT89C51           - Keil uvision 4 for C51 Development Tools with C51 Compiler.
+1: Compiler & IDE for Application development of  AT89C51              - Keil uvision 4 for C51 Development Tools with C51 Compiler.
 2: CAD                                                                 - Proteus 8.3. 
 3: Desktop Computer Architecture and OS for development of  AT89C51    - Intel X64 & Windows 8.1 (64 bit).
 4: Code editor                                                         - Notepad++.
