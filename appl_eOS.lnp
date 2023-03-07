@@ -1,7 +1,0 @@
-".\Objects\STARTUP.obj",
-".\Objects\main.obj",
-".\Objects\bargraph.obj",
-".\Objects\pulse_count.obj",
-".\Objects\simple_EOS.obj" 
-TO ".\Objects\appl_eOS" 
-PRINT(".\Listings\appl_eOS.m51") RAMSIZE(256) 
