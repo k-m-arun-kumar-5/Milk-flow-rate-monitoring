@@ -8,7 +8,7 @@ Schematics and simulation is done by using Proteus CAD. NOT EXPERIMENTED IN REAL
 
 Purpose :
 =========
-In all my respective repositories, I just shared my works that I worked as the learning path and practiced, with designed, developed, implemented, simulated and tested, including some projects, assignments, documentations and all other related files and some programming that might not being implement, not being completed, lacks some features or have some bugs. Purpose of all my repositories, if used, can be used for learning and educational purpose only. It can be used as the open source and freeware. Kindly read the LICENSE.txt for license, terms and conditions about the use of source codes, binaries, documentation and all other files, located in all my repositories. 
+In all my respective repositories, I, K.M. Arun Kumar alias Arunkumar Murugeswaran, just shared my works that I worked as the learning path and practiced, with designed, developed, implemented, simulated and tested, including some projects, assignments, documentations and all other related files and some programming that might not being implement, not being completed, lacks some features or have some bugs. Purpose of all my repositories, if used, can be used for LEARNING AND  EDUCATIONAL PURPOSE ONLY. It can be used as the open source and freeware. Kindly read the LICENSE.txt for license, terms and conditions about the use of source codes, binaries, documentation and all other files, located in all my repositories. 
 
 My Thanks and Tribute :
 ========================
@@ -35,7 +35,7 @@ Note :
 ======
 Kindly read in the source codes, if mentioned, about the Program Description or Purpose, Known Bugs, Caution & Notes and documentations. 
 
-Repository Web Link :
-=====================
+My Repositories Web Link :
+==========================
 https://github.com/k-m-arun-kumar-5
 
